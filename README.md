@@ -60,13 +60,13 @@ Please note how some components are nested in other components. Your data should
 
 Acceptance criteria:
  
-- [ ] Displays GAMEBOARD (use testdata.js)
-  - [ ] Includes CATEGORIES (with correct info), each displays CATEGORY
-  - [ ] CATEGORY by default should list CLUES with their $ value
-- [ ] Displays SCOREBOARD
-  - [ ] Should default to $0
-- [ ] RESPONSE
-  - [ ] Should only accept a response when a CLUE is selected
+- [X] Displays GAMEBOARD (use testdata.js)
+  - [X] Includes CATEGORIES (with correct info), each displays CATEGORY
+  - [X] CATEGORY by default should list CLUES with their $ value
+- [X] Displays SCOREBOARD
+  - [X] Should default to $0
+- [X] RESPONSE
+  - [X] Should only accept a response when a CLUE is selected
 
 
 ![app-component.png](./images/app-component.png)
@@ -79,14 +79,14 @@ Acceptance criteria:
 
 Acceptance criteria:
  
-- [ ] Replaces GAMEBOARD with CLUE question when ($)CLUE is clicked
-  - [ ] Displays RESPONSE
-  - [ ] Displays SCOREBOARD
-  - [ ] RESPONSE
-    - [ ] Should show a response input
-    - [ ] Should switch back to full GAMEBOARD when reponse is submitted
-  - [ ] GAMEBOARD
-    - [ ] After submitting a response: does not show CLUE dollar value when displaying CATEGORIES
+- [X] Replaces GAMEBOARD with CLUE question when ($)CLUE is clicked
+  - [X] Displays RESPONSE
+  - [X] Displays SCOREBOARD
+  - [X] RESPONSE
+    - [X] Should show a response input
+    - [X] Should switch back to full GAMEBOARD when reponse is submitted
+  - [X] GAMEBOARD
+    - [X] After submitting a response: does not show CLUE dollar value when displaying CATEGORIES
 
 ![clue](./images/clue.png)
 
@@ -98,12 +98,12 @@ Acceptance criteria:
 
 Acceptance criteria:
  
-- [ ] RESPONSE
-  - [ ] Should submit response when user hits the enter key
-  - [ ] Should switch back to GAMEBOARD when reponse is submitted
-  - [ ] GAMEBOARD does not show CLUE dollar value when displaying CATEGORIES
-  - [ ] Displays SCOREBOARD
-    - [ ] Updates score after response based on correct / incorrect answer
+- [X] RESPONSE
+  - [X] Should submit response when user hits the enter key
+  - [X] Should switch back to GAMEBOARD when reponse is submitted
+  - [X] GAMEBOARD does not show CLUE dollar value when displaying CATEGORIES
+  - [X] Displays SCOREBOARD
+    - [X] Updates score after response based on correct / incorrect answer
 
 Entering a reponse:
 

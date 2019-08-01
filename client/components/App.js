@@ -9,16 +9,34 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      results: categories,
+      results: [],
       currentQuestion: {},
       answeredQuestions: [],
-      score: 0
+      score: 0,
     };
   }
+
   componentDidMount() {
-    // Getting data from an external API
-    //1. A query to /api/categories to get a set of categories
-    //2. A set of queries afterwards to /api/category at each category id to get clues for that category
+    fetch("http://jservice.io/api/categories?count=100")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // map results
+          let newResults = [];
+          for (let i = 0; i <100; i+=20){
+            let index = Math.floor(Math.random()*20)
+            newResults.push(result[index+i])
+          }
+          newResults.map(category => {
+            fetch(`http://jservice.io/api/category?id=${category.id}`)
+              .then(res => res.json())
+              .then(clues => {
+                let newClues = clues.clues.slice(0,5)
+                clues.clues = newClues;
+                this.setState({ results: this.state.results.concat(clues)});
+              })
+          })
+        })
   }
 
   selectQuestion(clue){
@@ -38,6 +56,7 @@ export default class App extends Component {
         this.setState({score: newScore})
       }
       this.state.answeredQuestions.push(this.state.currentQuestion.id);
+      console.log(this.state.currentQuestion.answer)
       this.state.currentQuestion = {};
     }
   }

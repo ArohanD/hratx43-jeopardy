@@ -17,7 +17,7 @@ module.exports = {
                 },
                 {
                     "id": 87702,
-                    "answer": "Noah\\'s Ark",
+                    "answer": "Noah\'s Ark",
                     "question": "Former astronaut James Irwin launched several expeditions in hopes of finding this on Mount Ararat",
                     "value": 400,
                     "airdate": "2009-07-22T12:00:00.000Z",
@@ -151,7 +151,7 @@ module.exports = {
                 },
                 {
                     "id": 87716,
-                    "answer": "<i>High Rollers</i>",
+                    "answer": "High Rollers",
                     "question": "If your toss of the dice couldn't knock off the last number on this game show that I once hosted, you lost",
                     "value": 800,
                     "airdate": "2009-07-22T12:00:00.000Z",

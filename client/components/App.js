@@ -20,24 +20,38 @@ export default class App extends Component {
     //1. A query to /api/categories to get a set of categories
     //2. A set of queries afterwards to /api/category at each category id to get clues for that category
   }
-  submitResponse() {
 
+  selectQuestion(clue){
+    this.setState({
+      currentQuestion: clue,
+    });
   }
 
-  recordResponse() {
-
+  submitAnswer(answer){
+    if(this.state.currentQuestion.question){
+      if(answer.toLowerCase() 
+      === this.state.currentQuestion.answer.toLowerCase()){
+        let newScore = this.state.score + this.state.currentQuestion.value;
+        this.setState({score: newScore})
+      } else {
+        let newScore = this.state.score - this.state.currentQuestion.value;
+        this.setState({score: newScore})
+      }
+      this.state.answeredQuestions.push(this.state.currentQuestion.id);
+      this.state.currentQuestion = {};
+    }
   }
+
   render() {
     return (
       <div id={'app'}>
         <Gameboard currentQuestion={this.state.currentQuestion}
-                   selectQuestion={this.state.selectQuestion}
+                   selectQuestion={this.selectQuestion.bind(this)}
                    categories={this.state.results}
                    answeredQuestions={this.state.answeredQuestions}
                    />
         <Scoreboard score={this.state.score}/>
-        <Response recordResponse={this.recordResponse}
-                  submitResponse={this.submitResponse}
+        <Response submitAnswer={this.submitAnswer.bind(this)}
                   />
       </div>
     );

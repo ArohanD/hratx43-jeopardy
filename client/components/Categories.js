@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Category from './Category'
 
 const Categories = props => {
   return (
     <div id={'categories'} data-testid="categoryList">
       {/* display all the categories */}
+      {props.categories.map(category => 
+        <Category title={category.title}
+                  selectQuestion={props.selectQuestion}
+                  currentQuestion={props.currentQuestion}
+                  answeredQuestions={props.answeredQuestions}
+                  clues={category.clues}
+                  key={category.id}
+                  />
+      )}
     </div>
   );
 };
